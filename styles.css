@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #ccc;
+    height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    font-family: "Bebas neue";
+    padding: 30px 60px;
+    border: none;
+    background-color: #fff;
+    font-weight: bold;
+    color: #262626;
+    letter-spacing: 3px;
+    font-size: 1.2em;
+    position: relative;
+    transform: perspective(1000px) rotate(-15deg) skew(25deg) translate(0,0);
+    box-shadow: -20px 20px 20px rgba(0,0,0,.5);
+    transition: all 300ms ease-in-out;
+}
+
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-color: #b1b1b1;
+    transform: rotate(0deg) skewY(-45deg);
+    transition: all 300ms ease-in-out;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    width: 100%;
+    height: 20px;
+    background-color: #b1b1b1;
+    transform: rotate(0deg) skewX(-45deg);
+    transition: all 300ms ease-in-out;
+}
+
+/* HOVER EFFECTS */
+
+button:hover {
+    transform: perspective(1000px) rotate(-15deg) skew(25deg) translate(10px, -20px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+    color: #fff;
+    background-color: #3b5998;
+}
+
+button:hover::before, button:hover::after {
+    background-color: #506ca7;
+}
